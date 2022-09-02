@@ -2,23 +2,19 @@ extends layout
 
 block content
     h2 Commençons par le début
-    form.mb-3(name="form" method="POST" action="/index.js")
-        .difficulty
-            label.form-label Quel niveau de difficulté voulez-vous ?
-            select.form-select
-                option(value="easy")= "Easy"
-                option(value="medium")= "Medium"
-                option(value="hard")= "Hard"
+    form(action='fight', method='post').mb-3
+        label(for="difficulty").form-label Quel niveau de difficulté voulez-vous ?
+        select#difficulty(name="class").form-select
+            option(name="difficulty", value="easy")= "Easy"
+            option(name="difficulty", value="medium")= "Medium"
+            option(name="difficulty", value="hard")= "Hard"
+        label(for="class").form-label Quel classe souhaitez-vous jouer ?
+        select#class(name="class").form-select
+            option(name="class", value="Magician")= "Magician"
+            option(name="class", value="Paladin")= "Paladin"
+            option(name="class", value="Barbarian")= "Barbarian"
+        label(for="name").form-label Quel est votre nom ?
+            input#name(name="name", required).form-control
+        a(href="fight")
+            input.btn.btn-primary(type="submit" value="Valider")
 
-        .class
-            label.form-label Quel classe souhaitez-vous jouer ?
-            select.form-select
-                option(value="Magician")= "Magician"
-                option(value="Paladin")= "Paladin"
-                option(value="Barbarian")= "Barbarian"
-
-        .name
-            label.form-label Quel est votre nom ?
-                input.form-control
-
-    a.btn.btn-primary(href="/fight")  submit

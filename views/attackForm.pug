@@ -1,6 +1,6 @@
 h3 Choisissez votre action
 
-form.attacks#action
+form.attacks#action(method='post' action='index.js')
     .form-check
         input#physicalAttack.form-check-input(type='radio' name='action' checked)
         label.form-check-label(for='physicalAttack')
@@ -32,4 +32,4 @@ form.attacks#action
 
 
 
-button.btn.btn-primary(onclick="console.log(form.entries)") Fin du tour
+button.btn.btn-primary(onclick="console.log(form)") Fin du tour

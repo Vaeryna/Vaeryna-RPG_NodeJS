@@ -6,23 +6,31 @@ block aside
         .card-body
             h5.card-title #{name}
             p.card-text
-                    li Santé : #{PlayerStats.health}
-                    li Armure : #{PlayerStats.armor}
-                    li Magie : #{PlayerStats.magic}
-                    li Force : #{PlayerStats.strength}
-                    li Vitesse : #{PlayerStats.speed}
+                li Santé : #{PlayerStats.health}
+                li Armure : #{PlayerStats.armor}
+                li Magie : #{PlayerStats.magic}
+                li Force : #{PlayerStats.strength}
+                li Vitesse : #{PlayerStats.speed}
 
 
 
 
 block content
-    include attackForm
+    - let turn =2
+        if turn > 1
+            include fightSummary
+        include attackForm
 
 block hydra
     .card(style='width: 18rem;')
         img.card-img-top(src='https://cdn.pixabay.com/photo/2021/05/19/01/57/dragon-6264685_960_720.jpg' width="300" height='auto' alt='hydraPic')
         .card-body
-            h5.card-title Hydre
+            h5.card-title
+                | Hydre -
+                if HydraStats.head > 1
+                    |  #{HydraStats.head} têtes
+                else
+                    |  #{HydraStats.head} tête
             p.card-text
                 li Santé : #{HydraStats.health}
                 li Armure : #{HydraStats.armor}

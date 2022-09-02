@@ -28,6 +28,7 @@ const server = http.createServer((req, res) => {
                     speed: 20
                 },
                 HydraStats: {
+                    head: 3,
                     health: 100,
                     armor: 15,
                     magic: 50,

@@ -1,6 +1,9 @@
 import http from "http"
 import pug from "pug"
-
+import body2Obj from "./utils/body2obj.js";
+let name =""
+let difficulty=""
+let classe= ""
 
 const server = http.createServer((req, res) => {
         let url = req.url.replace('/', '');
@@ -14,6 +17,20 @@ const server = http.createServer((req, res) => {
         if (url === "newGame") {
             let html = pug.renderFile('./views/newGame.pug');
             res.end(html)
+            if (req.method == 'POST') {
+                var body = [];
+                req.on('data', chunk => {
+                    body.push(chunk);
+                }).on('end', () => {
+                    body = Buffer.concat(body);
+                    body = body2Obj(body);
+                    name =body.name
+                    difficulty = body.difficulty
+                    classe = body.class
+
+                });
+            }
+
         }
         if (url === 'fight') {
             let html = pug.renderFile('./views/fight.pug', {

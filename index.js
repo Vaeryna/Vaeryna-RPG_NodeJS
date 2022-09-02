@@ -16,15 +16,29 @@ const server = http.createServer((req, res) => {
             res.end(html)
         }
         if (url === 'fight') {
-            let html = pug.renderFile('./views/fight.pug', {
+            pug.renderFile('./views/fight.pug', {
                 name: "Thrall",
                 work: "Chaman",
-                difficulty: "easy"
+                difficulty: "easy",
+                PlayerStats: {
+                    health: 100,
+                    armor: 15,
+                    magic: 50,
+                    strength: 15,
+                    speed: 20
+                },
+                HydraStats: {
+                    health: 100,
+                    armor: 15,
+                    magic: 50,
+                    strength: 15,
+                    speed: 20
+                }
+
             }, (err, data) => {
                 if (err) return console.log(err.message);
 
                 res.end(data);
-
 
 
             })

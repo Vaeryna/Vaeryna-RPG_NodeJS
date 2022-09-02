@@ -1,16 +1,17 @@
 extends layout
 
 block aside
-    - const {health, armor, magic,strength,speed} = stats
-
     .card(style='width: 18rem;')
-        img.card-img-top(src='https://picsum.photos/200' alt='profilPic' )
+        img.card-img-top(src='https://picsum.photos/200'  height='217'  alt='profilPic' )
         .card-body
             h5.card-title #{name}
             p.card-text
-                each stat in stats
-                    li: #{stat.name} : #{stat}
-    button.btn.btn-primary(onclick='console.log("Go fight !")') Play
+                    li Santé : #{PlayerStats.health}
+                    li Armure : #{PlayerStats.armor}
+                    li Magie : #{PlayerStats.magic}
+                    li Force : #{PlayerStats.strength}
+                    li Vitesse : #{PlayerStats.speed}
+
 
 
 
@@ -18,4 +19,13 @@ block content
     include attackForm
 
 block hydra
-    img(src='https://cdn.pixabay.com/photo/2021/05/19/01/57/dragon-6264685_960_720.jpg' style=('width="400"') alt='hydraPic')
+    .card(style='width: 18rem;')
+        img.card-img-top(src='https://cdn.pixabay.com/photo/2021/05/19/01/57/dragon-6264685_960_720.jpg' width="300" height='auto' alt='hydraPic')
+        .card-body
+            h5.card-title Hydre
+            p.card-text
+                li Santé : #{HydraStats.health}
+                li Armure : #{HydraStats.armor}
+                li Magie : #{HydraStats.magic}
+                li Force : #{HydraStats.strength}
+                li Vitesse : #{HydraStats.speed}

@@ -1,9 +1,35 @@
-form.attacks
+h3 Choisissez votre action
+
+form.attacks#action
     .form-check
-        input#flexRadioDefault1.form-check-input(type='radio' name='flexRadioDefault')
-        label.form-check-label(for='flexRadioDefault1')
-            | Default radio
+        input#physicalAttack.form-check-input(type='radio' name='action' checked)
+        label.form-check-label(for='physicalAttack')
+            | Attaque physique
     .form-check
-        input#flexRadioDefault2.form-check-input(type='radio' name='flexRadioDefault' checked='')
-        label.form-check-label(for='flexRadioDefault2')
-            | Default checked radio
+        input#magicAttack.form-check-input(type='radio' name='action')
+        label.form-check-label(for='magicAttack')
+            | Attaque magique
+    .form-check
+        input#armorBoost.form-check-input(type='radio' name='action' )
+        label.form-check-label(for='armorBoost')
+            | Boost d'armure
+    .form-check
+        input#strengthBoost.form-check-input(type='radio' name='action' )
+        label.form-check-label(for='strengthBoost')
+            | Boost de force
+    .form-check
+        input#magicBoost.form-check-input(type='radio' name='action' )
+        label.form-check-label(for='magicBoost')
+            | Boost de magie
+    .form-check
+        input#speedBoost.form-check-input(type='radio' name='action')
+        label.form-check-label(for='speedBoost')
+            | Boost de vitesse
+    .form-check
+        input#heal.form-check-input(type='radio' name='action')
+        label.form-check-label(for='heal')
+            | Soin
+
+
+
+button.btn.btn-primary(onclick="console.log(form.entries)") Fin du tour

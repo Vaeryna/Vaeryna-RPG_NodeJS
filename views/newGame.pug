@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    h2 Commençons par le début
+    form.mb-3(name="form" method="POST" action="/index.js")
+        .difficulty
+            label.form-label Quel niveau de difficulté voulez-vous ?
+            select.form-select
+                option(value="easy")= "Easy"
+                option(value="medium")= "Medium"
+                option(value="hard")= "Hard"
+
+        .class
+            label.form-label Quel classe souhaitez-vous jouer ?
+            select.form-select
+                option(value="Magician")= "Magician"
+                option(value="Paladin")= "Paladin"
+                option(value="Barbarian")= "Barbarian"
+
+        .name
+            label.form-label Quel est votre nom ?
+                input.form-control
+
+
+
+
+        //.card(style='width: 18rem;')
+        //    img.card-img-top(src='...' alt='...')
+        //    .card-body
+        //        h5.card-title Card title
+        //        p.card-text
+        //            | Some quick example text to build on the card title and make up the bulk of the card's content.
+        //        a.btn.btn-primary(href='#') Go somewhere
+
+    //  button.btn.btn-primary(onclick="console.log(form)") submit
+
+    button.btn.btn-primary(onclick='console.log("lol")')  submit
